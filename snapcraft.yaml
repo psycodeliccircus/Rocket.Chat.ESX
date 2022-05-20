@@ -1,4 +1,4 @@
-name: esxrocketchat-desktop
+name: esxrocketchat
 version: 0.5.0
 summary: Desktop app for ESX.Rocket.Chat
 description: ESX.Rocket.Chat Desktop app
@@ -15,7 +15,7 @@ parts:
       - fontconfig-config
       - gnome-themes-standard
     files:
-      node_modules/electron/dist/electron: rocketchat
+      node_modules/electron/dist/electron: esxrocketchat
       node_modules/electron/dist/icudtl.dat: icudtl.dat
       node_modules/electron/dist/snapshot_blob.bin: snapshot_blob.bin
       node_modules/electron/dist/natives_blob.bin: natives_blob.bin
