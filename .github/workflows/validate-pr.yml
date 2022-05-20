@@ -56,7 +56,7 @@ jobs:
         if: ${{ matrix.os == 'macos-latest' }}
         run: |
           brew install coreutils
-          gtimeout 30 ./dist/mac/Rocket.Chat.app/Contents/MacOS/ESX.Rocket.Chat || code=$?
+          gtimeout 30 ./dist/mac/ESX.Rocket.Chat.app/Contents/MacOS/ESX.Rocket.Chat || code=$?
           if [[ $code -ne 124 && $code -ne 0 ]]; then
             exit $code;
           fi
