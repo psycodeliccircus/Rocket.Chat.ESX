@@ -6,13 +6,13 @@ declare global {
   }
 }
 
-console.log('[Rocket.Chat Desktop] Injected.ts');
+console.log('[ESX.Rocket.Chat Desktop] Injected.ts');
 
 const start = (): void => {
-  console.log('[Rocket.Chat Desktop] Injected.ts start fired');
+  console.log('[ESX.Rocket.Chat Desktop] Injected.ts start fired');
   if (typeof window.require !== 'function') {
-    console.log('[Rocket.Chat Desktop] window.require is not defined');
-    console.log('[Rocket.Chat Desktop] Inject start - retrying in 1 seconds');
+    console.log('[ESX.Rocket.Chat Desktop] window.require is not defined');
+    console.log('[ESX.Rocket.Chat Desktop] Inject start - retrying in 1 seconds');
     setTimeout(start, 1000);
     return;
   }
@@ -21,11 +21,11 @@ const start = (): void => {
     window.require('/app/utils/rocketchat.info') ?? {};
 
   if (!serverInfo.version) {
-    console.log('[Rocket.Chat Desktop] serverInfo.version is not defined');
+    console.log('[ESX.Rocket.Chat Desktop] serverInfo.version is not defined');
     return;
   }
 
-  console.log('[Rocket.Chat Desktop] Injected.ts serverInfo', serverInfo);
+  console.log('[ESX.Rocket.Chat Desktop] Injected.ts serverInfo', serverInfo);
 
   window.RocketChatDesktop.setServerInfo(serverInfo);
 
@@ -54,7 +54,7 @@ const start = (): void => {
     const jitsiDomain = settings.get('Jitsi_Domain') || '';
 
     console.log(
-      '[Rocket.Chat Desktop] window.open for Jitsi overloaded',
+      '[ESX.Rocket.Chat Desktop] window.open for Jitsi overloaded',
       jitsiDomain
     );
     window.open = (url, name, features = '') => {
@@ -106,7 +106,7 @@ const start = (): void => {
 
   const destroyPromiseSymbol = Symbol('destroyPromise');
 
-  console.log('[Rocket.Chat Desktop] Injected.ts replaced Notification');
+  console.log('[ESX.Rocket.Chat Desktop] Injected.ts replaced Notification');
 
   window.Notification = class RocketChatDesktopNotification
     extends EventTarget
@@ -236,6 +236,6 @@ const start = (): void => {
   };
 };
 
-console.log('[Rocket.Chat Desktop] Injected');
+console.log('[ESX.Rocket.Chat Desktop] Injected');
 
 start();

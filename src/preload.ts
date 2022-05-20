@@ -23,11 +23,11 @@ declare global {
 contextBridge.exposeInMainWorld('JitsiMeetElectron', JitsiMeetElectron);
 
 const start = async (): Promise<void> => {
-  console.log('[Rocket.Chat Desktop] preload.ts start');
+  console.log('[ESX.Rocket.Chat Desktop] preload.ts start');
   const serverUrl = await invoke('server-view/get-url');
 
   if (!serverUrl) {
-    console.log('[Rocket.Chat Desktop] preload.ts serverUrl is not defined');
+    console.log('[ESX.Rocket.Chat Desktop] preload.ts serverUrl is not defined');
     return;
   }
 
@@ -43,9 +43,9 @@ const start = async (): Promise<void> => {
 
   await invoke('server-view/ready');
 
-  console.log('[Rocket.Chat Desktop] waiting for RocketChatDesktop.onReady');
+  console.log('[ESX.Rocket.Chat Desktop] waiting for RocketChatDesktop.onReady');
   RocketChatDesktop.onReady(() => {
-    console.log('[Rocket.Chat Desktop] RocketChatDesktop.onReady fired');
+    console.log('[ESX.Rocket.Chat Desktop] RocketChatDesktop.onReady fired');
     listen(
       WEBVIEW_DID_NAVIGATE,
       debounce(() => {
@@ -64,5 +64,5 @@ const start = async (): Promise<void> => {
   });
 };
 
-console.log('[Rocket.Chat Desktop] waiting for window load');
+console.log('[ESX.Rocket.Chat Desktop] waiting for window load');
 window.addEventListener('load', start);
