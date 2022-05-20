@@ -162,8 +162,7 @@
     {
       "provider": "github",
       "owner": "psycodeliccircus",
-      "repo": "Rocket.Chat.ESX",
-      "vPrefixedTagName": false
+      "repo": "Rocket.Chat.ESX"
     }
   ]
 }
