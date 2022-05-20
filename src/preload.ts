@@ -27,7 +27,9 @@ const start = async (): Promise<void> => {
   const serverUrl = await invoke('server-view/get-url');
 
   if (!serverUrl) {
-    console.log('[ESX.Rocket.Chat Desktop] preload.ts serverUrl is not defined');
+    console.log(
+      '[ESX.Rocket.Chat Desktop] preload.ts serverUrl is not defined'
+    );
     return;
   }
 
@@ -43,7 +45,9 @@ const start = async (): Promise<void> => {
 
   await invoke('server-view/ready');
 
-  console.log('[ESX.Rocket.Chat Desktop] waiting for RocketChatDesktop.onReady');
+  console.log(
+    '[ESX.Rocket.Chat Desktop] waiting for RocketChatDesktop.onReady'
+  );
   RocketChatDesktop.onReady(() => {
     console.log('[ESX.Rocket.Chat Desktop] RocketChatDesktop.onReady fired');
     listen(

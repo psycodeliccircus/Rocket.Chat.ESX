@@ -12,7 +12,9 @@ const start = (): void => {
   console.log('[ESX.Rocket.Chat Desktop] Injected.ts start fired');
   if (typeof window.require !== 'function') {
     console.log('[ESX.Rocket.Chat Desktop] window.require is not defined');
-    console.log('[ESX.Rocket.Chat Desktop] Inject start - retrying in 1 seconds');
+    console.log(
+      '[ESX.Rocket.Chat Desktop] Inject start - retrying in 1 seconds'
+    );
     setTimeout(start, 1000);
     return;
   }
