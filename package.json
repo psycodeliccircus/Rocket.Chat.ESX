@@ -30,7 +30,7 @@
     "build": "run-p .:build:rollup .:build:workspaces",
     ".:build:rollup": "rollup -c",
     ".:build:workspaces": "yarn workspaces run build",
-    "release": "yarn electron-builder --publish onTagOrDraft --x64",
+    "release": "yarn run clean && yarn run build && set GH_TOKEN=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 && yarn electron-builder --publish always -m -l -w",
     "build:watch": "rollup -c -w",
     "install-app-deps": "electron-builder install-app-deps",
     "test": "xvfb-maybe jest",
