@@ -113,8 +113,8 @@
   },
   "appx": {
     "backgroundColor": "#2f343d",
-    "displayName": "Rocket.Chat",
-    "publisherDisplayName": "Rocket.Chat",
+    "displayName": "ESX.Rocket.Chat",
+    "publisherDisplayName": "ESX.Rocket.Chat",
     "languages": [
       "en-US",
       "en-GB",
@@ -129,10 +129,10 @@
       "rpm",
       "snap"
     ],
-    "executableName": "esxrocketchat-desktop",
+    "executableName": "esxrocketchat",
     "category": "GNOME;GTK;Network;InstantMessaging",
     "desktop": {
-      "StartupWMClass": "Rocket.Chat",
+      "StartupWMClass": "ESX.Rocket.Chat",
       "MimeType": "x-scheme-handler/esxrocketchat"
     },
     "artifactName": "esxrocketchat-${version}-${os}-${arch}.${ext}"
@@ -162,7 +162,8 @@
     {
       "provider": "github",
       "owner": "psycodeliccircus",
-      "repo": "Rocket.Chat.ESX"
+      "repo": "Rocket.Chat.ESX",
+      "releaseType": "release"
     }
   ]
 }
